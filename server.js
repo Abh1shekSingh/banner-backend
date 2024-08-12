@@ -1,8 +1,12 @@
+import dotenv from 'dotenv'
 import express from "express"
 import cors from 'cors'
 import bannerRouter from "./routes/banner.route.js";
-
 const app = express();
+
+dotenv.config({
+    path:'../env'
+});
 
 
 app.use(cors());

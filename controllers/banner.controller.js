@@ -1,9 +1,10 @@
 import db from "../config/db.js";
 
 const updateBanner = async (req, res) => {
-  const { desc, timer_hour, timer_min, timer_sec, is_active, link } = req.body;
-  const query = "UPDATE banner SET `desc` = ?, `timer_hour` = ?,`timer_min` = ?,`timer_sec` = ?, `is_active` = ?, `link` = ? WHERE id = 1";
-  db.query(query, [desc, timer_hour, timer_min, timer_sec, is_active, link], (err, data) => {
+  const { descr, timer_hour, timer_min, timer_sec, is_active, link } = req.body;
+  console.log(req.body)
+  const query = "UPDATE banner SET `descr` = ?, `timer_hour` = ?,`timer_min` = ?,`timer_sec` = ?, `is_active` = ?, `link` = ? WHERE id = 1";
+  db.query(query, [descr, timer_hour, timer_min, timer_sec, is_active, link], (err, data) => {
     if (err) {
       return res.status(500).json(err.message);
     } else {
